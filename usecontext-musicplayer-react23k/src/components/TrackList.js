@@ -6,9 +6,10 @@ const TrackList = () => {
     const music = useMusicPlayer();
 
     return (
-    <div>
+    <div className="trackList">
         {music.trackList.map((track, index) => (
-            <div key={`${track}_${index}`}>
+            <div key={`${track}_${index}`} className="trackInlist">
+                <div>{index+1+'.'} {track.name}</div>
                 <button onClick={() => music.playTrack(index)}>
                     {music.isPlaying && music.currentTrackIndex === index ? (
                         <FontAwesomeIcon icon={faPause} />
@@ -16,7 +17,7 @@ const TrackList = () => {
                         <FontAwesomeIcon icon={faPlay} />
                     )}
                 </button>
-                <div>Track Playing: {track.name}</div>
+                
             </div>
         )
         )}

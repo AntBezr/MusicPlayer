@@ -1,5 +1,8 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ text-align: center;
 }
 
 .App-logo {
@@ -26,6 +29,33 @@
 
 .App-link {
   color: #61dafb;
+}
+.mainPlayer{
+  margin: 10px;
+  padding: 8px;
+  border: solid rgb(203, 203, 203);
+  width: 300px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #282c34;
+  color: white;
+  box-shadow: gray 2px 5px 5px;
+}
+.trackName{
+  width: 150px;
+}
+.buttonsArea{
+  width: 100px;
+}
+.trackInlist{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 180px;
+
 }
 
 @keyframes App-logo-spin {

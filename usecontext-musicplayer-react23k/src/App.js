@@ -3,21 +3,28 @@ import './App.css';
 import { PlayerControls } from './components/PlayerControls';
 import TrackList from './components/TrackList';
 import { MusicContext } from './contexts/MusicContext';
+import miracleMusic from './assests/miracle.mp3'
+import insideYou from './assests/insideYou.mp3'
+import upbeat from './assests/upbeat.mp3'
 
 
 
 function App() {
 
   const [state, setState] = useState({
-    audioPlayer: new Audio(),
+    audioPlayer: new Audio(miracleMusic),
     tracks: [
       {
-        name: "Track 1",
-        file: "",
+        name: "Miracle",
+        file: miracleMusic,
       },
       {
-        name: "Track 2",
-        file: "",
+        name: "upbeat",
+        file: upbeat,
+      },
+      {
+        name: "Inside you",
+        file: insideYou,
       }
     ],
     currentTrackIndex: 0,
@@ -29,7 +36,9 @@ function App() {
   return (
     <MusicContext.Provider value={[state, setState]}>
     <div className="App">
-    <PlayerControls />
+      
+    <PlayerControls/>
+    
     <TrackList/>
     </div>
     </MusicContext.Provider>

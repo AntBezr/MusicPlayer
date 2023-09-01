@@ -6,10 +6,11 @@ const PlayerControls = () => {
     const music = useMusicPlayer();
 
     return (
-        <div>
-        <div>
-            <p>{music.currentTrackName}</p>
+        <div className='mainPlayer'>
+        <div className="trackName">
+        <marquee>{music.currentTrackName}</marquee>
         </div>
+        <div className="buttonsArea">
         <button>
             <FontAwesomeIcon 
             icon={faStepBackward}
@@ -26,6 +27,7 @@ const PlayerControls = () => {
             <FontAwesomeIcon icon={faStepForward}
             onClick={music.playNextTrack} /> 
         </button>
+        </div>
         </div>
 
     )
